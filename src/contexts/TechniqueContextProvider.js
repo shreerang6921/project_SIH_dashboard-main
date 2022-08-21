@@ -7,7 +7,7 @@ export const TechniqueContextProvider = ({ children }) => {
     const [init,setInit] = useState(false);
     const [isTest,setTest] = useState(false);
     const [url,setUrl] = useState('http://localhost:5000');
-    
+    const [currTech,setCurrTech] = useState("peripheral")
     const techRoute = "/";
     const [initTime,setInitTime] = useState(0);
     const dashinit = []
@@ -19,11 +19,9 @@ export const TechniqueContextProvider = ({ children }) => {
     const[practicePara,setPracticePara] = useState("")
     const [stepInstructions,setStepInstructions] = useState("")
     
-    const authToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjJmZTdmOTNmNmE3OWI1NGExODU2M2U2In0sImlhdCI6MTY2MDg0NTk3MX0.ZHsufa7-t0Uef-ADPY8PzSD_Mk7KT5BXRQvqVLonUXs"
+    const authToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjMwMWM4MDVjNWI0MWVhYzE5YTM4MDQ5In0sImlhdCI6MTY2MTA2MTEyNX0.ZpmubJ-WEcY_eQ6DlxeM33vqVokAPXzUBgZP66GER3Y"
 
     let id = "";
-
-
 
     //API calls
     // set default values
@@ -52,6 +50,8 @@ export const TechniqueContextProvider = ({ children }) => {
         });
         const json = await response.json()
         setDash(json);
+        setCurrTech(json.progressdata[0].techniqueName)
+        console.log(currTech)
     
       }
 
@@ -96,11 +96,8 @@ export const TechniqueContextProvider = ({ children }) => {
 
     // 5 put {TechniqueName} for techniques
     // TODO TechniqueName (default peripheral)
-    const putTechName = async (techniqueName) => {
-      const data = {
-          techniqueName
-      }
-
+    const putTechName = async () => {
+     
     const response = await fetch(`${url}/techniques`,{
       method : 'PUT',
       headers: {
@@ -108,10 +105,10 @@ export const TechniqueContextProvider = ({ children }) => {
     
           "authtoken": authToken
         },
-        body:JSON.stringify(data)
+        body:JSON.stringify(currTech)
     });
-    const json = response.json();
-  
+    const json = await response.json();
+   
   }
 
   // 6 get {pargraph} for Practice
@@ -195,7 +192,7 @@ const postScore = async (time,correctAns) => {
 
 
     return(
-        <TechniqueContext.Provider value={{practicePara,setPracticePara,stepInstructions,setStepInstructions,dash,initData,testPara,setDash,setDefault,tech,setTech,isTest,setTest,url,setUrl,techRoute,init,setInit,getData,getInitTest,putInitVars,putTechName,getPracticePara,getStepInstructions,putStepNo,getTest,postScore,initTime,setInitTime}}>
+        <TechniqueContext.Provider value={{currTech,practicePara,setPracticePara,stepInstructions,setStepInstructions,dash,initData,testPara,setDash,setDefault,tech,setTech,isTest,setTest,url,setUrl,techRoute,init,setInit,getData,getInitTest,putInitVars,putTechName,getPracticePara,getStepInstructions,putStepNo,getTest,postScore,initTime,setInitTime}}>
             {children}
         </TechniqueContext.Provider>
     )

@@ -5,17 +5,18 @@ import { useStateContext } from '../../contexts/ContextProvider';
 import { useTechniqueContext } from '../../contexts/TechniqueContextProvider';
 const Dashboard = () => {
   const { currentColor} = useStateContext();
-  const {init,currStep,getData,setDefault,dash} = useTechniqueContext();
+  const {getData,dash} = useTechniqueContext();
 
   console.log(dash)
 
   useEffect(() => {
     getData()
-  }, [init])
+  }, [])
 
 
- const nextStep = parseInt(dash.progressdata?.[0].Step,10) + 1;
+ const nextStep = parseInt(dash?.progressdata?.[0]?.Step,10) + 1;
   const step = String(nextStep)
+
 
   return (
     <div className="mt-24">
@@ -24,7 +25,7 @@ const Dashboard = () => {
           <div className="flex justify-between items-center">
             <div>
               <p className="font-bold text-gray-400">Progress</p>
-              <p className="text-2xl">{!dash.progressdata?.[0].isInitial? "Initial Assesment":step}</p>
+              <p className="text-2xl">{!dash?.progressdata?.[0]?.isInitial? "Initial Assesment":step}</p>
               
             </div>
 
@@ -33,9 +34,9 @@ const Dashboard = () => {
             <Button
               color="white"
               bgColor={currentColor}
-              text={`${!dash.progressdata?.[0].isInitial ? 'Start':'Resume'}`}
+              text={`${!dash?.progressdata?.[0]?.isInitial ? 'Start':'Resume'}`}
               borderRadius="10px"
-              link={`${!dash.progressdata?.[0]?.isInitial ? '/initialAssessment':'/steps'}`}
+              link={`${!dash?.progressdata?.[0]?.isInitial ? '/initialAssessment':'/steps'}`}
             />
           </div>
         </div>

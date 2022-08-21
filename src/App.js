@@ -7,17 +7,19 @@ import { Navbar, Footer, Sidebar, ThemeSettings } from './Dashboard/components';
 import { Dashboard, Techniques, Meditation, FAQs } from './Dashboard/pages';
 import './App.css';
 import { useStateContext } from './contexts/ContextProvider';
-import Steps from './Perform/Practice/components/Steps';
+
 import Test from './Perform/Test/Test';
-import PeriPractice from './modules/module_techniques/peripheral_vision/PeriPractice';
-import PeriTest from './modules/module_techniques/peripheral_vision/PeriTest';
+import PeriPractice from './modules/module_techniques/peripheral_vision/PeriPractice'
+
 import Status from './status/Status';
 import { useTechniqueContext } from './contexts/TechniqueContextProvider';
 import InitTest from './InitTest';
+import Practical from './modules/Practical';
+
 
 const App = () => {
   const { setCurrentColor, setCurrentMode, currentMode, activeMenu, currentColor, themeSettings, setThemeSettings } = useStateContext();
-  const{url} = useTechniqueContext();
+  const{currTech} = useTechniqueContext();
   useEffect(() => {
     const currentThemeColor = localStorage.getItem('colorMode');
     const currentThemeMode = localStorage.getItem('themeMode');
@@ -26,6 +28,8 @@ const App = () => {
       setCurrentMode(currentThemeMode);
     }
   }, []);
+
+  
 
   return (
     <div className={currentMode === 'Dark' ? 'dark' : ''}>
@@ -86,7 +90,8 @@ const App = () => {
                 <Route path="/steps" element={<Status/>} />
 
                 {/* Steps  */}
-                <Route path="/step/:id" element={<PeriPractice url={`${url}/step1`}/>} />
+                <Route path={`/step/:id`} element={<Practical/>} />
+                
               
                 <Route path="/initialAssessment" element={<InitTest/>} />
                 
@@ -108,4 +113,3 @@ const App = () => {
 
 export default App;
 
-// "मनीष सिसोदिया और सीएम अरविंद केजरीवाल ने आरोपों को झूठा बताया है. वहीं बीजेपी नेताओं ने कहा है कि इस मामले से केजरीवाल सरकार का भ्रष्टाचार सामने आया है."
