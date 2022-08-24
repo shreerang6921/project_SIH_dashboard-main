@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.cards{
+    @apply text-[#7E74B6]  ml-20 mr-20 shadow-2xl;
+    width: auto;
+    height: auto;
+    font-size: 1rem;
+    font-family: 'Roboto';
+    font-style: normal;
+    padding: 0.9rem;
+    position: relative;
+    border-radius: 1rem; 
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.title{
+    font-size: 1.6rem;
+    line-height: normal;
+    /* padding-top: 10rem; */
+    text-align: center;
+}
+
+.image{
+    display: block;
+    border-radius: 50px 50px 0px 0px;
+    align-items: center;
+
+}
+
+.image img{
+    display: block;
+    max-height: 15rem;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+.button {
+
+    background-color:#0a0a23;
+    color: #fff;
+    border:none; 
+    border-radius:10px; 
+    padding: 0.5rem;
+    min-height:1rem; 
+    min-width: 5rem;
+  }

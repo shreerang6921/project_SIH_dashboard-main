@@ -38,8 +38,8 @@ export default function Status() {
       })} */}
 
       {steps.map((step) => {
-        return <div>
-          <StatusCard key={step.id} name={step.title} link={step.link} />
+        return <div key={step.id}>
+          <StatusCard  name={step.title} link={step.link} />
 
           </div>
       })}

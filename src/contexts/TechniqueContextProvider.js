@@ -7,12 +7,12 @@ export const TechniqueContextProvider = ({ children }) => {
     const [init,setInit] = useState(false);
     const [isTest,setTest] = useState(false);
     const [url,setUrl] = useState('http://localhost:5000');
-    const [currTech,setCurrTech] = useState("peripheral")
+    const [currTech,setCurrTech] = useState("");
     const techRoute = "/";
     const [initTime,setInitTime] = useState(0);
     const dashinit = []
     const [dash,setDash] = useState(dashinit)
-    
+    const [begin, setBegin] = useState(false)
     // get data
     const[initData,setInitData] = useState("")
     const[testPara,setTestPara] = useState("")
@@ -50,9 +50,7 @@ export const TechniqueContextProvider = ({ children }) => {
         });
         const json = await response.json()
         setDash(json);
-        setCurrTech(json.progressdata[0].techniqueName)
-        console.log(currTech)
-    
+        setCurrTech(json?.progressdata?.[0]?.techniqueName);
       }
 
     // 2 get {paragraph} for Init
@@ -68,7 +66,6 @@ export const TechniqueContextProvider = ({ children }) => {
         // setInitPara(json)
         setInitData(json)
         console.log(json);
-        
       }
 
 
@@ -96,8 +93,11 @@ export const TechniqueContextProvider = ({ children }) => {
 
     // 5 put {TechniqueName} for techniques
     // TODO TechniqueName (default peripheral)
-    const putTechName = async () => {
-     
+    const putTechName = async (techniqueName) => {
+      const data = {
+        techniqueName
+      }
+      
     const response = await fetch(`${url}/techniques`,{
       method : 'PUT',
       headers: {
@@ -105,10 +105,10 @@ export const TechniqueContextProvider = ({ children }) => {
     
           "authtoken": authToken
         },
-        body:JSON.stringify(currTech)
+        body:JSON.stringify(data)
     });
     const json = await response.json();
-   
+    
   }
 
   // 6 get {pargraph} for Practice
@@ -136,7 +136,7 @@ export const TechniqueContextProvider = ({ children }) => {
     });
     const json = await response.json()
     setStepInstructions(json) 
-
+    console.log(json)
   }
 
   // 8 put {StepNo} for current step
@@ -192,7 +192,7 @@ const postScore = async (time,correctAns) => {
 
 
     return(
-        <TechniqueContext.Provider value={{currTech,practicePara,setPracticePara,stepInstructions,setStepInstructions,dash,initData,testPara,setDash,setDefault,tech,setTech,isTest,setTest,url,setUrl,techRoute,init,setInit,getData,getInitTest,putInitVars,putTechName,getPracticePara,getStepInstructions,putStepNo,getTest,postScore,initTime,setInitTime}}>
+        <TechniqueContext.Provider value={{currTech,practicePara,setPracticePara,stepInstructions,setStepInstructions,dash,initData,testPara,setDash,setDefault,tech,setTech,isTest,setTest,url,setUrl,techRoute,init,setInit,getData,getInitTest,putInitVars,putTechName,getPracticePara,getStepInstructions,putStepNo,getTest,postScore,initTime,setInitTime,begin, setBegin}}>
             {children}
         </TechniqueContext.Provider>
     )

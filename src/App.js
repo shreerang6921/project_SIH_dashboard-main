@@ -15,6 +15,9 @@ import Status from './status/Status';
 import { useTechniqueContext } from './contexts/TechniqueContextProvider';
 import InitTest from './InitTest';
 import Practical from './modules/Practical';
+import WordChunk from './modules/module_techniques/word_chunk/WordChunk';
+import ChooseTechnique from './chooseTech/ChooseTechnique';
+import TechInfo from './chooseTech/TechInfo';
 
 
 const App = () => {
@@ -94,9 +97,12 @@ const App = () => {
                 
               
                 <Route path="/initialAssessment" element={<InitTest/>} />
+                <Route path="/Wordchunk" element={<WordChunk/>}/>
+                <Route path="/choosetechnique" element={<ChooseTechnique/>}/>
                 
-
-                
+                <Route path="/peripheralInfo" element = {<TechInfo title="Peripheral Vision" description="lorem ipsum"/>}/>
+                <Route path="/skipWordsInfo" element = {<TechInfo title="Skip Words" description="lorem ipsum"/>}/>
+                <Route path="/wordChunkInfo" element = {<TechInfo title="Word Chunk" description="lorem ipsum"/>}/>
                 
               </Routes>
             </div>

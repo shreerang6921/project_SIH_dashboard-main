@@ -1,0 +1,22 @@
+
+
+.P-text{
+    /* padding-top: 10rem; */
+    text-align: center;
+    font-size: 3rem;
+}
+
+#Peripheral{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+
+.P-image img{
+    height: 20rem;
+    width: 20rem;
+}
+

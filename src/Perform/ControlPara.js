@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React,{useState,useEffect} from 'react'
+import { useTechniqueContext } from '../contexts/TechniqueContextProvider';
 import Button from './Practice/components/Button';
 
 export default function ControlPara({onStop}) {
@@ -7,6 +8,7 @@ export default function ControlPara({onStop}) {
   const [isStart, setStart] = useState(false);
   const [show,setShow] = useState(0);
   const correctAns = 10;
+  const {setBegin} = useTechniqueContext();
 
   let timer;
 
@@ -21,12 +23,14 @@ export default function ControlPara({onStop}) {
 
   const handleStart = () => {
     setStart(true);
+    setBegin(true);
     setTime(0);
   };
 
   const handleStop = () => {
     if (isStart) {
       setStart(false);
+      setBegin(false);
       clearInterval(timer);
       onStop(time,correctAns);
 
