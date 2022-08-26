@@ -58,28 +58,7 @@ const ThemeSettings = () => {
             </label>
           </div>
         </div>
-        <div className="p-4 border-t-1 border-color ml-4">
-          <p className="font-semibold text-xl ">Theme Colors</p>
-          <div className="flex gap-3">
-            {themeColors.map((item, index) => (
-              <TooltipComponent key={index} content={item.name} position="TopCenter">
-                <div
-                  className="relative mt-2 cursor-pointer flex gap-5 items-center"
-                  key={item.name}
-                >
-                  <button
-                    type="button"
-                    className="h-10 w-10 rounded-full cursor-pointer"
-                    style={{ backgroundColor: item.color }}
-                    onClick={() => setColor(item.color)}
-                  >
-                    <BsCheck className={`ml-2 text-2xl text-white ${item.color === currentColor ? 'block' : 'hidden'}`} />
-                  </button>
-                </div>
-              </TooltipComponent>
-            ))}
-          </div>
-        </div>
+    
       </div>
     </div>
   );
