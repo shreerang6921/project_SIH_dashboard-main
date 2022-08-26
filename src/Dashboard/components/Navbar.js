@@ -6,7 +6,8 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import avatar from '../data/avatar.jpg';
 import { Cart, Chat, Notification, UserProfile } from '.';
 import { useStateContext } from '../../contexts/ContextProvider';
-
+import { Link } from 'react-router-dom';
+import Logo from '../images/Logo.svg'
 const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
   <TooltipComponent content={title} position="BottomCenter">
     <button
@@ -48,11 +49,26 @@ const Navbar = () => {
  
 
   return (
-    <div className="flex justify-end p-2 md:ml-6 md:mr-6 relative">
+    
+    <div className="flex justify-between p-2 md:ml-6 md:mr-6 relative dark:text-white">
       
+
+      <div className='h-15 w-24 '>
+        <Link to="/">
+        <img src={Logo} alt="logo" />
+        </Link>
+      </div>
 
       
       <div className="flex">
+      <div className='flex items-center gap-4 cursor-pointer p-1 hover:bg-light-gray rounded-lg'>
+      <Link to="/meditation">Calm your mind</Link>
+    
+      </div>
+      <div className='flex items-center gap-4 cursor-pointer p-1 hover:bg-light-gray rounded-lg'>
+      
+    
+      </div>
         <TooltipComponent content="Profile" position="BottomCenter">
           <div
             className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
