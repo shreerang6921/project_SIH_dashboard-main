@@ -4,7 +4,22 @@ import { useTechniqueContext } from '../../../contexts/TechniqueContextProvider'
 import Paragraph from "../../../Perform/Paragraph";
 import Steps from "../../../Perform/Practice/components/Steps";
 
-let arr1 = ["Hey", "we", "are","team","BRRAVOS","selected","for","SIH","2022","at", "Bangalore"];
+
+
+export default function WordChunk() {
+    const [words,setWords] = useState([]);
+    const [index,setIndex] = useState(0);
+    const {id} = useParams();
+  const {getPracticePara,getStepInstructions,practicePara,stepInstructions,begin}=useTechniqueContext()
+ 
+
+  useEffect(()=>{
+    getPracticePara()
+    getStepInstructions(id)
+  },[])
+  console.log(stepInstructions)
+  console.log(practicePara)
+  let arr1 = practicePara.split(" ")
 let arr =[]
 let arr2=[]
 
@@ -36,20 +51,6 @@ let j = 0
       
     }
 
-export default function WordChunk() {
-    const [words,setWords] = useState([]);
-    const [index,setIndex] = useState(0);
-    const {id} = useParams();
-  const {getPracticePara,getStepInstructions,practicePara,stepInstructions,begin}=useTechniqueContext()
- 
-
-  useEffect(()=>{
-    getPracticePara()
-    getStepInstructions(id)
-  },[])
-  console.log(stepInstructions)
-  console.log(practicePara)
-
  
 
     useEffect(
@@ -71,7 +72,7 @@ export default function WordChunk() {
 
 
     return (
-      <div className='grid grid-cols-1 sm:grid-cols-2 gap-6 p-10'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 sm:gap-6 p-10'>
       <Steps id={id} data={stepInstructions.Instruction}/>
       <div className="relative">
           <Paragraph data={words}/>

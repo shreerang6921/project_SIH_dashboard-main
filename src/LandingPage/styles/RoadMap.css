@@ -1,0 +1,20 @@
+.big img{
+    height: 40rem;
+    padding-left: 13rem;
+    
+}
+
+.small img{
+    display: none;
+}
+
+@media (max-width: 640px) {
+    .big img{
+        display: none;
+    }
+    .small img{
+        display: block;
+        padding-bottom: 4rem;
+    }
+      
+    }

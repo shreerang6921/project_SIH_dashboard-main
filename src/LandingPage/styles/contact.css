@@ -1,0 +1,19 @@
+
+.Contactbg{
+    @apply min-h-screen bg-[#F9F9F9] 
+}
+.Title{
+    @apply text-Apurple font-bold text-[2.15rem] px-36 pt-8 pb-4
+}
+.ContactContent{
+    @apply text-[#000000] font-semibold text-justify px-[9.3rem]
+}
+.Mail{
+    @apply px-36 p-4 flex space-x-4 font-semibold space-y-1
+}
+.Phone{
+    @apply px-36 flex space-x-[0.8rem] font-semibold space-y-[0.4rem]
+}
+.Location{
+    @apply px-36 p-4 flex space-x-4 font-semibold space-y-1
+}

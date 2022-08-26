@@ -1,9 +1,10 @@
 import React from "react";
-import "./styles/Medi.css";
-import Medi from "./images/Medi.jpg";
+import "./Medi.css";
+import Medi from "../images/Medi.jpg";
 import { FaPlayCircle } from "react-icons/fa";
 import Play from "./Play";
-import Calm from "./images/Calm.gif"
+
+import { Link } from "react-router-dom";
 
 
 export default function Meditation() {
@@ -13,10 +14,14 @@ export default function Meditation() {
                 <div className="M-head">Guided Meditation</div>
                 <div className="medi-container">
                     {/* <div className="text-container"> */}
-                        <div className="M-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu non diam phasellus vestibulum lorem sed risus.
-                            Congue nisi vitae suscipit tellus mauris. Erat velit scelerisque in dictum non consectetur a erat. Sit amet justo donec enim diam vulputate ut pharetra. Ut etiam sit amet nisl purus in mollis. Egestas tellus rutrum tellus pellentesque eu tincidunt tortor.
-                            Ac turpis egestas sed tempus urna et. Cursus vitae congue mauris rhoncus. Eget aliquet nibh praesent tristique magna sit amet. Massa vitae tortor condimentum lacinia quis vel eros donec.
-                            Hendrerit dolor magna eget est. Consequat ac felis donec et odio pellentesque diam. Ut consequat semper viverra.
+                        <div className="M-body"><p> Practicing mindfulness techniques before attention demanding tasks results in better focus, comprehension and awareness. We recommend you try these instructions for a fulfulling meditation seesion. </p><b/>
+                        1. Prefer a calm environment and sit in a comfortable position. <b/>
+                        2. Relax your muscles and eventually your entire body. <b/>
+                        3. Focus on your breath. Notice how your breath flows.<b/>
+                        4. When your attention wanders, as it will, bring your attention back to your breathing.<b/>
+                        5. Notice any stray thoughts but don't dwell on them. Simply let the thoughts pass.<b/>
+                        6. Feel how calm and gentle your breathing is, and how relaxed your body feels. <b/>
+                        7. Now its time to gently reawaken your body and mind.<b/>
                     {/* </div> */}
                     
                         </div>
@@ -26,7 +31,7 @@ export default function Meditation() {
                     
             </div>
             <div className="medi-link">
-                        <div className="play1"><a href="./Play"><FaPlayCircle></FaPlayCircle></a></div>
+                        <div className="play1"><Link to="/meditate"><FaPlayCircle></FaPlayCircle></Link></div>
                         <div className="M-text">Start Meditating</div>
                         </div>
                     

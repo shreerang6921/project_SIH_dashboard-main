@@ -1,0 +1,186 @@
+
+
+
+
+
+
+.left-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 20rem;
+    margin-left: 10rem;
+}
+
+@media (max-width: 640px) {
+  .left-container {
+    align-items: center;
+    margin: auto;
+    padding-top: 15rem;
+    padding-bottom: 15rem;
+  }
+}
+
+
+
+
+.text{  
+    width: 32rem;
+    font-style: normal;
+    /* font-weight: 700; */
+    font-size: 3rem;
+    line-height: 3rem;
+    color: white;
+    justify-content: start;
+    color: #7e74b6;
+
+}
+
+@media (max-width: 640px) {
+  .text {
+    font-size: 2rem;
+    text-align: left;
+    width: auto;
+    display: flex ;
+    flex-direction: column;
+    padding-left: 2rem;
+    line-height: 4rem;
+    padding-bottom: 6rem;
+  }
+
+  .italic{
+    font-size: 2.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+
+
+}
+
+
+.italic{
+  font-size: 4rem;
+  padding-bottom: 1rem;
+  font-weight: 900;
+  font-family: monospace;
+
+}
+
+.description{
+  display: flex;
+}
+
+.box{
+    cursor: pointer;    
+    width:fit-content;
+    height: auto;
+    left: 11rem;
+    /* top: 32rem; */
+    background: #7e74b6;
+    box-shadow: 0rem 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+    border-radius: 1.3rem;
+    display: flex;
+}
+
+
+  
+  
+
+.box-text {
+    text-align: center;
+    padding: 1rem; 
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.03rem;
+    color: #F9F9F9;
+}
+
+
+
+@media (max-width: 640px) {
+  .box-text {
+    font-size: 0.9rem;
+    padding: 0.9rem;
+    text-align: center;
+    color: #363062;
+  }
+
+  .box{
+    background: #E9D5DA;
+    
+
+  }
+}
+
+
+
+.icons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: block;
+    margin-top: 2.5rem;
+    margin-left: 0.75rem;
+    margin-bottom: 3rem;
+    padding: 1rem;
+}
+
+@media (max-width: 640px) {
+  .icons {
+  display: none;
+  }
+}
+
+
+
+
+
+
+.icon{
+    font-size: 2rem;
+    color:#7E74B6;
+    flex: auto;
+    margin-bottom: 1rem;
+}
+
+.main{
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 640px) {
+  .main{
+    flex-direction: column-reverse;
+  }
+
+}
+
+.home img{
+  display: flex;
+  height: 20rem;
+  border-radius: 5%;
+  /* margin-left: 18rem; */
+  margin-top: 15rem;
+  margin-right: 10rem;
+  /* padding-left: 5rem; */
+}
+@media (max-width: 640px) {
+  .home img{
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .main {
+ background: #7e74b6 ;
+  }
+  .text{
+    color: white;
+  }
+  .box{
+    /* background: black; */
+  }
+
+}

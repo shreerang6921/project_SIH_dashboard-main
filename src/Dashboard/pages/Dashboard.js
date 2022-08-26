@@ -1,6 +1,7 @@
 import React,{useEffect} from 'react';
 import { Button, SparkLine } from '../components';
-import { SparklineAreaData } from '../data/dummy';
+
+
 import { useStateContext } from '../../contexts/ContextProvider';
 import { useTechniqueContext } from '../../contexts/TechniqueContextProvider';
 const Dashboard = () => {
@@ -13,9 +14,26 @@ const Dashboard = () => {
     getData()
   }, [])
 
+ const spark = [{x:1},{x:2}];
+
+ if(dash?.progressdata?.[0]?.techniqueName == "peripheral"){
+  spark[0].yval = dash?.scoredata?.[0]?.periperalScoreStep1;
+  spark[1].yval = dash?.scoredata?.[0]?.periperalScoreStep2;
+
+ }else if(dash?.progressdata?.[0]?.techniqueName == "skipWords"){
+  spark[0].yval = dash?.scoredata?.[0]?.skipWordScoreStep1;
+  spark[1].yval = dash?.scoredata?.[0]?.skipWordScoreStep2;
+ }else if(dash?.progressdata?.[0]?.techniqueName == "wordChunk"){
+  spark[0].yval = dash?.scoredata?.[0]?.chunkWordScoreStep1;
+  spark[1].yval = dash?.scoredata?.[0]?.chunkWordScoreStep2;
+ }
+
 
  const nextStep = parseInt(dash?.progressdata?.[0]?.Step,10) + 1;
-  const step = String(nextStep)
+  let step = String(nextStep)
+  if(step>=3){
+    step = "completed"
+  }
 
 
   return (
@@ -24,7 +42,7 @@ const Dashboard = () => {
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full lg:w-80 p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center">
           <div className="flex justify-between items-center">
             <div>
-              <p className="font-bold text-gray-400">Progress</p>
+              <p className="font-bold text-gray-400">{!dash?.progressdata?.[0]?.isInitial? "Please Take the Initial Assessment":"Progress"}</p>
               <p className="text-2xl">{!dash?.progressdata?.[0]?.isInitial? "Initial Assesment":step}</p>
               
             </div>
@@ -42,26 +60,7 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className="flex gap-10 flex-wrap justify-center">
-        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780  ">
-          <div className="flex justify-between">
-            <p className="font-semibold text-xl">Stats</p>
-          </div>
-          <div className="mt-10 flex gap-10 justify-center">
-            <div className=" border-r-1 border-color m-4 pr-10">
-              <div>
-                <p>
-                  <span className="text-3xl font-semibold">Score</span>
-                </p>
-              </div>
-              <div className="mt-5">
-                {/* Need to update score taken from backend to dummy.js file */}
-                <SparkLine currentColor={currentColor} id="line-sparkLine" type="Line" height="80px" width="250px" data={SparklineAreaData} color={currentColor} />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    
 
     </div>
   );

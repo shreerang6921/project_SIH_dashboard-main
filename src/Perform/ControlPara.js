@@ -45,11 +45,9 @@ export default function ControlPara({onStop}) {
         <div className="flex justify-end gap-2">
         <Button link="#" name="start" func={handleStart} />
         <Button link="#" name="stop" func={handleStop} />
-        <Button link="#" name="showTime" func={handleShow} />
+     
       </div>
-      <p>
-      {show}
-      </p>
+    
       <p>
       {time}
       </p>

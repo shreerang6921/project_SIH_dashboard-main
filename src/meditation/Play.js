@@ -1,6 +1,6 @@
 import React from "react";
-import "./styles/Play.css";
-import Calm from "./images/Calm.gif";
+import "./Play.css";
+import Calm from "../images/Calm.gif";
 import AudioPlayer from "./AudioPlayer";
 import tracks from "./tracks";
 export default function Play()

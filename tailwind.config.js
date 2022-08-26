@@ -42,6 +42,13 @@ module.exports = {
         'hero-pattern':
           "url('https://i.ibb.co/MkvLDfb/Rectangle-4389.png')",
       },
+      fontFamily:{
+        robo:"'Roboto',sans-serif",
+        nunito:"'Nunito', sans-serif"
+      },
+      colors:{
+        Apurple:"#7e74b6"
+      }
     },
   },
   plugins: [],

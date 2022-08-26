@@ -481,11 +481,11 @@ export const links = [
     title: 'Pages',
     links: [
       {
-        name: 'Techniques',
+        name: 'techniques',
         icon: <AiOutlineShoppingCart />,
       },
       {
-        name: 'Meditation',
+        name: 'meditation',
         icon: <IoMdContacts />,
       }
     ],
@@ -790,13 +790,7 @@ export const themeColors = [
 ];
 
 export const userProfileData = [
-  {
-    icon: <BsCurrencyDollar />,
-    title: 'My Profile',
-    desc: 'Account Settings',
-    iconColor: '#03C9D7',
-    iconBg: '#E5FAFB',
-  }
+ 
 ];
 
 export const ordersGrid = [

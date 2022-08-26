@@ -19,7 +19,7 @@ export default function Test() {
   }
 
   return (
-    <div className='m-20'>
+    <div className='m-5 mt-20'>
         <Paragraph data={testPara.para}/>
         <ControlPara onStop={postScore}/>
         <Button name={"go to dashboard"} link="/" func={(id)=>{handleClick(id)}}/>

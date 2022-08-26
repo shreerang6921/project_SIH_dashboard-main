@@ -1,0 +1,20 @@
+.W-text{
+    /* padding-top: 10rem; */
+    text-align: center;
+    font-size: 3rem;
+}
+
+#Word{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+
+.W-image img{
+    height: 20rem;
+    width: 20rem;
+}
+

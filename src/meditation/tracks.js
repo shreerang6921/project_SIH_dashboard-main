@@ -1,5 +1,5 @@
-import imgSrc from "./images/Calm.gif";
-import Audio from "./Audio/music.mpeg";
+import imgSrc from "../images/Calm.gif";
+import Audio from "../Audio/music.mp3";
 
 
 

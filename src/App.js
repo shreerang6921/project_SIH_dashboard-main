@@ -4,13 +4,13 @@ import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import { Navbar, Footer, Sidebar, ThemeSettings } from './Dashboard/components';
-import { Dashboard, Techniques, Meditation, FAQs } from './Dashboard/pages';
+import { Dashboard, FAQs } from './Dashboard/pages';
 import './App.css';
 import { useStateContext } from './contexts/ContextProvider';
-
+import Meditation from './meditation/Meditation';
 import Test from './Perform/Test/Test';
 import PeriPractice from './modules/module_techniques/peripheral_vision/PeriPractice'
-
+import Techniques from './Dashboard/pages/chooseTech/Techniques';
 import Status from './status/Status';
 import { useTechniqueContext } from './contexts/TechniqueContextProvider';
 import InitTest from './InitTest';
@@ -18,6 +18,7 @@ import Practical from './modules/Practical';
 import WordChunk from './modules/module_techniques/word_chunk/WordChunk';
 import ChooseTechnique from './chooseTech/ChooseTechnique';
 import TechInfo from './chooseTech/TechInfo';
+import Play from './meditation/Play';
 
 
 const App = () => {
@@ -35,8 +36,8 @@ const App = () => {
   
 
   return (
-    <div className={currentMode === 'Dark' ? 'dark' : ''}>
-      <BrowserRouter>
+    <BrowserRouter>
+    <div className={currentMode === 'Dark' ? 'dark App' : 'App'}>
         <div className="flex relative dark:bg-main-dark-bg">
           <div className="fixed right-4 bottom-4" style={{ zIndex: '1000' }}>
             <TooltipComponent
@@ -54,36 +55,31 @@ const App = () => {
 
             </TooltipComponent>
           </div>
-          {activeMenu ? (
-            <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white ">
-              <Sidebar />
-            </div>
-          ) : (
-            <div className="w-0 dark:bg-secondary-dark-bg">
-              <Sidebar />
-            </div>
-          )}
+         
           <div
             className={
-              activeMenu
-                ? 'dark:bg-main-dark-bg  bg-main-bg min-h-screen md:ml-72 w-full  '
-                : 'bg-main-bg dark:bg-main-dark-bg  w-full min-h-screen flex-2 '
+              
+         
+               'bg-main-bg dark:bg-main-dark-bg  w-full min-h-screen flex-2 '
             }
           >
-            <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full ">
+            
               <Navbar />
-            </div>
+        
             <div>
               {themeSettings && (<ThemeSettings />)}
 
               <Routes>
                 {/* dashboard  */}
+                
                 <Route path="/" element={(<Dashboard />)} />
                 <Route path="/Dashboard" element={(<Dashboard />)} />
 
                 {/* pages  */}
-                <Route path="/Techniques" element={<Techniques />} />
-                <Route path="/Meditation" element={<Meditation />} />
+                <Route path="/techniques" element={<Techniques />} />
+                <Route path = "/meditation"  element = {<Meditation/>}/>
+                <Route path = "/meditate"  element = {<Play />}/>
+                
 
                 {/* apps  */}
                 <Route path="/FAQs" element={<FAQs />} />
@@ -104,13 +100,14 @@ const App = () => {
                 <Route path="/skipWordsInfo" element = {<TechInfo title="Skip Words" description="lorem ipsum"/>}/>
                 <Route path="/wordChunkInfo" element = {<TechInfo title="Word Chunk" description="lorem ipsum"/>}/>
                 
+                
               </Routes>
             </div>
             <Footer />
           </div>
         </div>
-      </BrowserRouter>
     </div>
+      </BrowserRouter>
   // <Practice/>
   // <Test/>
   );

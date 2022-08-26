@@ -1,0 +1,32 @@
+.cards{
+    @apply text-[#7E74B6]  w-[20rem] h-[15rem] ml-20 mr-20 shadow-2xl;
+    width: 18rem;
+    font-size: 1rem;
+    font-family: 'Roboto';
+    font-style: normal;
+    padding: 2rem;
+    position: block;
+    border-radius: 1rem; 
+    text-align: left;
+    margin: auto;
+
+    /* display: flex; */
+}
+
+.title{
+    font-size: 1.6rem;
+    line-height: normal;
+    padding-top: 1rem;
+    text-align: left;
+}
+
+.logo{
+    font-size: 10rem;
+    display: flex; 
+    position: absolute; 
+}
+
+.logo1{
+    font-size: 2rem;
+    font: center;
+}

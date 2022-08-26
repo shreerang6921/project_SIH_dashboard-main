@@ -32,7 +32,7 @@ export default function Status() {
   ];
 
   return (
-    <div className="w-96">
+    <div className="w-96 mt-20">
       {/* {steps.foreach((step)=>{
       return step.stepNo)
       })} */}
@@ -40,9 +40,9 @@ export default function Status() {
       {steps.map((step) => {
         return <div key={step.id}>
           <StatusCard  name={step.title} link={step.link} />
-
           </div>
       })}
+     
     </div>
   );
 }

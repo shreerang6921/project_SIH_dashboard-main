@@ -1,0 +1,21 @@
+
+.S-text{
+    /* padding-top: 10rem; */
+    text-align: center;
+    font-size: 3rem;
+}
+
+#SkipWords{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+
+.S-image img{
+    height: 20rem;
+    width: 20rem;
+}
+

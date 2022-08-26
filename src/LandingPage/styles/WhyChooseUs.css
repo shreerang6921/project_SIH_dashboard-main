@@ -1,0 +1,28 @@
+.WCU{
+    font-size: 3rem;
+    color: #7E74B6;
+    text-align: center;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 3rem;
+    padding: 4rem;
+    /* padding-top: 6rem; */
+}
+
+.text1{
+    @apply shadow-black;
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+    text-align: center;
+}
+
+@media (max-width: 800px) {
+    .text1 {
+        gap:3rem;
+        flex-direction: column;
+        
+    }
+  }
+

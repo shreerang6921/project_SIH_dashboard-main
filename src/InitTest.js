@@ -6,7 +6,7 @@ import Button from './Perform/Practice/components/Button';
 import Paragraph from './Perform/Paragraph';
 
 export default function InitTest() {
-    const {techRoute,getInitTest,putInitVars,initData,init } = useTechniqueContext();
+    const {getInitTest,putInitVars,initData,init } = useTechniqueContext();
     useEffect(()=>{
       getInitTest()
     },[init])
@@ -14,10 +14,10 @@ export default function InitTest() {
    
 
   return (
-    <div className='m-20'>
-        <Paragraph data={initData.para}/>
+    <div className='m-5 mt-20'>
+        <Paragraph data={initData.paragraph}/>
         <ControlPara onStop={putInitVars}/>
-        <Button name="Choose your technique" link={techRoute}/>
+        <Button name="Choose your technique" link="/chooseTechnique"/>
     </div>
   )
 };

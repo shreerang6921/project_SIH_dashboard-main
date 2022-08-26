@@ -5,11 +5,8 @@
     color: #7E74B6;
 }
 
-
-
 .M-body{
-    display: flex;
-    font-family: 'Poppins';
+    /*display: flex;*/
     font-style: normal;
     font-weight: 400;
     font-size: 1rem;

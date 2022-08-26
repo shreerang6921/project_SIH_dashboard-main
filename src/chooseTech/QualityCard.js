@@ -23,8 +23,8 @@ const {setTech} = useTechniqueContext();
         </div>
         <p>{props.desc}</p>
         <br></br>
-        <Link to={props.link}><button className="button">Read more</button></Link>
         <Button name="select" func={props.func} link="/"/>
+        <Link to={props.link}><p>Read more</p></Link>
       </div>
     </div>
     </>

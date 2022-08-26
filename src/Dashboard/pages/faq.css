@@ -1,0 +1,24 @@
+.Title {
+    @apply text-3xl pt-11 pb-4 font-bold
+}
+.Subtitle {
+    @apply text-base font-normal
+}
+.Content {
+    @apply  flex inline-grid pl-5 pr-5 sm:grid-rows-2 sm:grid-cols-3 pt-14 text-center font-medium grid-cols-1 
+}
+.Card1 {
+    @apply pt-5 pl-7 pr-7
+}
+.T1 {
+    @apply pb-6 text-lg 
+}
+.St2 {
+    @apply text-sm
+}
+.Card2 {
+    @apply pt-14 pl-7 pr-7
+}
+.Bottom {
+    @apply pt-14
+}

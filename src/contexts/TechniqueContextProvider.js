@@ -19,7 +19,7 @@ export const TechniqueContextProvider = ({ children }) => {
     const[practicePara,setPracticePara] = useState("")
     const [stepInstructions,setStepInstructions] = useState("")
     
-    const authToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjMwMWM4MDVjNWI0MWVhYzE5YTM4MDQ5In0sImlhdCI6MTY2MTA2MTEyNX0.ZpmubJ-WEcY_eQ6DlxeM33vqVokAPXzUBgZP66GER3Y"
+    const authToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjMwODQ0NzQ4MDUxMzAyYmQ5MGU1NDYxIn0sImlhdCI6MTY2MTQ4NjE5Nn0.Zy8pRvo2BS92tfBj4QeC8mnsVj1UJO17JAoJhaSBntI"
 
     let id = "";
 
