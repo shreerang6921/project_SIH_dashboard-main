@@ -156,7 +156,8 @@ export const TechniqueContextProvider = ({ children }) => {
       },
     });
     const json = await response.json();
-    setTestPara(json);
+    console.log(json);
+    setTestPara(json[0].paragraph);
   };
 
   // 10 post {time,CompScore} for Test
